@@ -1,0 +1,46 @@
+<div class="row col-md-12 ">
+  <div class="sticky col-md-2" >
+    <div class="panel panel-default panel-body">
+      <ol >
+        <li ng-repeat="t in tablas"><a ng-click="load_grid(t); admin.sect=t" href="" >{{t}}</a></li>
+      </ol>
+    </div>
+  </div>
+
+    <div class="col-md-10">
+      <div ng-repeat="t in tablas" ng-if="t==admin.sect">
+        <div class="panel panel-primary"  id="{{t}}" >
+          <div class="panel-heading">
+            <h3 class="panel-title"> {{t}}</h3>
+          </div>
+
+            <table class="table table-bordered">
+              <th ng-repeat="(key, value) in myData[0]">{{key}}</th>
+              <tr ng-repeat="val in myData">
+                <td ng-repeat="v in val"><span>{{show_value(v)}}</span></td>
+              </tr>
+            </table>
+
+        </div>
+        <div class="form-group">
+          <center>
+            <button type="button" class="btn btn-success" name="button" ng-click="agregar=true">Agregar</button>
+          </center>
+        </div>
+
+        <div class="panel panel-default panel-body" ng-show="agregar">
+          <form ng-submit="agregar_item(t, item)">
+            <ng-include src="admin.template">
+            </ng-include>
+            <button type="submit" name="button">Confirtmar</button>
+          </form>
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+
+</div>
