@@ -1,1 +1,16 @@
-<p>This is the templates/form-estadios view.</p>
+<h3 class="text-info">Estadio:</h3>
+
+<fieldset class="form-group">
+  <label>codEstadio</label>
+  <input class="form-control" type="number" ng-model="$parent.item.codEstadio" required>
+</fieldset>
+
+<fieldset class="form-group">
+  <label>nomEstadio</label>
+  <input class="form-control" type="text" ng-model="$parent.item.nomEstadio" required>
+</fieldset>
+
+<fieldset class="form-group">
+  <label>codCiudad</label>
+  <select-ciudades ciudad="$parent.item.codCiudad" />
+</fieldset>

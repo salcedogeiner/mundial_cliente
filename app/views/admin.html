@@ -17,14 +17,14 @@
             <table class="table table-bordered">
               <th ng-repeat="(key, value) in myData[0]">{{key}}</th>
               <tr ng-repeat="val in myData">
-                <td ng-repeat="v in val"><span>{{show_value(v)}}</span></td>
+                <td ng-repeat="(k,v) in val"><span>{{show_value(k,v)}}</span></td>
               </tr>
             </table>
 
         </div>
         <div class="form-group">
           <center>
-            <button type="button" class="btn btn-success" name="button" ng-click="agregar=true">Agregar</button>
+            <button type="button" class="btn btn-primary" name="button" ng-click="agregar=true">Agregar</button>
           </center>
         </div>
 
@@ -32,9 +32,12 @@
           <form ng-submit="agregar_item(t, item)">
             <ng-include src="admin.template">
             </ng-include>
-            <button type="submit" name="button">Confirtmar</button>
+            <button type="submit" class="btn btn-success" name="button">Confirmar</button>
           </form>
         </div>
+
+
+        <pre>{{item | json}}</pre>
 
       </div>
 

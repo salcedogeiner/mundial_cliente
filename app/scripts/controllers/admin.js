@@ -26,13 +26,13 @@ angular.module('mundialClienteApp')
     $scope.agregar_item=function(t,item){
       console.log(t, item);
       apiRequest.post(t,item).then(function(response){
-        console.log("siii",response);
+        $scope.load_grid(t);
       });
     };
 
-    $scope.show_value=function(item){
+    $scope.show_value=function(key, item){
       if (typeof(item)=="object") {
-        return Object.values(item)[0];
+        return $scope.show_value(key,item[key]);
       } else {
         return item;
       }

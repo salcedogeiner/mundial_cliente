@@ -1,1 +1,26 @@
-<p>This is the templates/form-equipos view.</p>
+<h3 class="text-info">Equipo:</h3>
+
+<fieldset class="form-group">
+  <label>codEquipo</label>
+  <input class="form-control" type="text" ng-model="$parent.item.codEquipo" required>
+</fieldset>
+
+<fieldset class="form-group">
+  <label>nomEquipo</label>
+  <input class="form-control" type="text" ng-model="$parent.item.nomEquipo" required>
+</fieldset>
+
+<fieldset class="form-group">
+  <label>codTecnico</label>
+  <select-tecnicos tecnico="$parent.item.codTecnico" />
+</fieldset>
+
+<fieldset class="form-group">
+  <label>codPais</label>
+  <select-paises pais="$parent.item.codPais" />
+</fieldset>
+
+<fieldset class="form-group">
+  <label>codConfederacion</label>
+  <select-confederaciones confederacion="$parent.item.codConfederacion" />
+</fieldset>

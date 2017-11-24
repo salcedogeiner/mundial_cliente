@@ -1,1 +1,21 @@
-<p>This is the templates/form-tecnicos view.</p>
+<h3 class="text-info">Ciudad:</h3>
+
+<fieldset class="form-group">
+  <label>codTecnico</label>
+  <input class="form-control" type="number" ng-model="$parent.item.codTecnico" required>
+</fieldset>
+
+<fieldset class="form-group">
+  <label>nomTecnico</label>
+  <input class="form-control" type="text" ng-model="$parent.item.nomTecnico" required>
+</fieldset>
+
+<fieldset class="form-group">
+  <label>apeTecnico</label>
+  <input class="form-control" type="text" ng-model="$parent.item.apeTecnico" required>
+</fieldset>
+
+<fieldset class="form-group">
+  <label>codPais</label>
+  <select-paises pais="$parent.item.codPais" />
+</fieldset>
